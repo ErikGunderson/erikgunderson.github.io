@@ -28,6 +28,11 @@ description = "Resize + strip metadata from a photo for the repo: mise run photo
 depends = ["install"]
 run = "node scripts/prepare-image.mjs"
 
+[tasks.og]
+description = "Regenerate the social preview card (src/og-image.png)"
+depends = ["install"]
+run = "node scripts/make-og-image.mjs"
+
 [tasks.clean]
 description = "Delete the build output"
 run = "node -e \"require('fs').rmSync('_site', { recursive: true, force: true })\""

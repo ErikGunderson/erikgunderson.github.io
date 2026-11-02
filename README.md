@@ -24,6 +24,9 @@ mise tasks       # list all tasks (defined in mise.toml)
 - **Experience page**: `src/_data/experience.json` is a separate copy of the resume content.
   When you change the resume, update this file too.
 - **Skills**: `src/_data/skills.json`.
+- **Social preview card** (`src/og-image.png`): regenerate with `mise run og` after changing
+  your name/role in `site.json` or the headshot. LinkedIn caches previews; refresh with
+  https://www.linkedin.com/post-inspector/ after deploying.
 - **Projects**: add a Markdown file to `src/content/projects/` (copy an existing one). Front matter
   holds `title`, `order`, `tech`, and `links`; the body is the description.
 - **Hobbies**: one Markdown file per hobby in `src/content/hobbies/`. Add photos with

@@ -3,11 +3,11 @@ title: Furry children
 order: 99  # always last
 photos:
   - src: src/images/hobbies/cats/window.jpg
-    alt: Two black-and-white cats sitting side by side on a windowsill with snow outside
+    alt: Our cats sitting side by side on the windowsill
   - src: src/images/hobbies/cats/office-chair.jpg
-    alt: A black-and-white cat walking past an office chair, looking up at the camera
+    alt: Panache telling us who runs the office
     position: 50% 75%
   - src: src/images/hobbies/cats/counter.jpg
-    alt: A fluffy black-and-white cat standing on a kitchen counter, staring into the camera
+    alt: Zeezee begging for midnight snacks
 ---
-Not a hobby exactly, but they run the house. TODO: cat names and a line about each.
+Not a hobby exactly, but Panache and Zeezee know they run the house.

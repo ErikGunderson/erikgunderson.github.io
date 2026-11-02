@@ -9,4 +9,4 @@ photos:
     alt: Erik smiling and holding up a Top 4 playmat in front of a Star Wars Unlimited Regional Championship backdrop
     caption: Top 4 at a Star Wars Unlimited Season 1 Regional Championship
 ---
-I'm very into trading card games. Star Wars: Unlimited is the one I play most, and I play it competitively. I've qualified for and played in its Worlds-level event twice. My wife and I also play the One Piece Card Game and a couple of other games together.
+I'm very into trading card games. Star Wars: Unlimited is the one I play most, and I play it competitively. I've qualified for and played in the Galactic Championships (Worlds-level) event twice. My wife and I also play the One Piece Card Game together, among others.

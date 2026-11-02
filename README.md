@@ -26,3 +26,6 @@ mise tasks       # list all tasks (defined in mise.toml)
 - **Skills**: `src/_data/skills.json`.
 - **Projects**: add a Markdown file to `src/content/projects/` (copy an existing one). Front matter
   holds `title`, `order`, `tech`, and `links`; the body is the description.
+- **Hobbies**: one Markdown file per hobby in `src/content/hobbies/`. Add photos with
+  `mise run photo <original> src/images/hobbies/<hobby>/<name>.jpg` (resizes + strips EXIF/GPS),
+  then list them under `photos:` with `src`, `alt` (describe the photo), and optional `caption`.

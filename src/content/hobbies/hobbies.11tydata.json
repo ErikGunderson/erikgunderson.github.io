@@ -1,0 +1,5 @@
+{
+  "//": "Every file in this folder joins collections.hobbies and doesn't get its own page.",
+  "tags": "hobbies",
+  "permalink": false
+}

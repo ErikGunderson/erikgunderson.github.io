@@ -188,6 +188,24 @@ section > h2 { font-size: 1.4rem; margin: 0 .25rem 1rem; }
 .project .chips { margin-top: auto; padding-top: .5rem; }
 .project-links { display: flex; flex-wrap: wrap; gap: 1rem; font-weight: 600; }
 
+/* =========================================================================
+   Hobbies
+   ========================================================================= */
+.hobby + .hobby { margin-top: 1.5rem; }
+.hobby h2 { font-size: 1.4rem; margin-bottom: .5rem; }
+
+/* Same auto-fill trick as .grid: 1 column on phones, up to 3 on desktop. */
+.gallery {
+  display: grid; gap: .75rem; margin-top: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
+}
+.gallery figure { margin: 0; }
+.gallery img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover; /* uniform tiles even if photos differ in shape */
+  border-radius: var(--radius-sm); background: var(--surface-2);
+}
+.gallery figcaption { font-size: .85rem; color: var(--muted); margin-top: .35rem; }
+
 /* Respect users who've asked the OS for less motion. */
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }

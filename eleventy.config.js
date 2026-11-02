@@ -13,13 +13,14 @@ export default function (eleventyConfig) {
       outputDir: "_site/img/",
       urlPath: "/img/",
     });
-    return Image.generateHTML(metadata, {
+    const attrs = {
       alt,
       sizes,
-      class: cls || undefined,
       loading: eager ? "eager" : "lazy", // lazy: offscreen images aren't downloaded until scrolled near
       decoding: "async",
-    });
+    };
+    if (cls) attrs.class = cls;
+    return Image.generateHTML(metadata, attrs);
   });
 
   // Files that aren't templates (CSS, JS, images, the resume PDF) are copied to _site as-is.

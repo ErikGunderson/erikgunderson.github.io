@@ -1,0 +1,7 @@
+# Store text files with LF line endings in the repo (web tooling + CI run on Linux)
+* text=auto eol=lf
+*.pdf binary
+*.jpg binary
+*.png binary
+*.webp binary
+*.avif binary

@@ -1,0 +1,134 @@
+/* =========================================================================
+   Theme tokens (Material 3-inspired, indigo seed)
+   light-dark(A, B) picks A or B based on the element's `color-scheme`.
+   - Default: `light dark` → follows the OS setting.
+   - The toggle sets <html data-theme="light|dark"> to force one.
+   ========================================================================= */
+:root {
+  color-scheme: light dark;
+
+  --bg:         light-dark(#fdf8fd, #141218);
+  --fg:         light-dark(#1c1b1f, #e6e1e9);
+  --muted:      light-dark(#5f5b66, #b0a9ba);
+  --primary:    light-dark(#5b4fc4, #c7bfff);
+  --on-primary: light-dark(#ffffff, #2a1f78);
+  --surface:    light-dark(#f3eef9, #1d1b22);
+  --surface-2:  light-dark(#e9e2f5, #27242e);
+  --chip:       light-dark(#e4dcff, #3a3354);
+  --outline:    light-dark(#cac4d0, #49454f);
+
+  --radius-lg: 28px;
+  --radius-md: 20px;
+  --radius-sm: 12px;
+  --max-width: 70rem;
+  --font: "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; }
+
+/* =========================================================================
+   Base / reset
+   ========================================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;            /* column flex so the footer sits at the bottom on short pages */
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+main { flex: 1; }
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--primary); text-underline-offset: 3px; }
+h1, h2, h3 { line-height: 1.2; font-weight: 500; }
+
+/* Keyboard focus ring: visible only when navigating by keyboard. */
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Hidden until focused with Tab: lets keyboard/screen-reader users jump past the nav. */
+.skip-link {
+  position: absolute; left: 1rem; top: -3rem;
+  padding: .5rem 1rem; border-radius: var(--radius-sm);
+  background: var(--primary); color: var(--on-primary); z-index: 100;
+}
+.skip-link:focus { top: 1rem; }
+
+/* =========================================================================
+   Header + nav
+   ========================================================================= */
+.site-header { padding-block: .75rem; }
+.header-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.brand { color: var(--fg); text-decoration: none; font-weight: 600; font-size: 1.1rem; }
+
+.theme-toggle {
+  display: grid; place-items: center;
+  width: 44px; height: 44px;          /* 44px+ touch target */
+  border: 0; border-radius: 50%;
+  background: transparent; color: var(--fg); cursor: pointer;
+}
+.theme-toggle:hover { background: var(--surface-2); }
+.theme-toggle svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.theme-toggle .icon-moon { fill: currentColor; stroke: none; }
+/* Show the moon in light mode (tap → dark) and the sun in dark mode (tap → light). */
+.theme-toggle .icon-sun { display: none; }
+:root[data-resolved-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-resolved-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+.nav-pills {
+  display: flex; gap: .25rem;
+  list-style: none; padding: .5rem 0 0;
+  overflow-x: auto;                    /* scrolls sideways on narrow phones instead of wrapping */
+  scrollbar-width: none;
+}
+.nav-pills a {
+  display: block; white-space: nowrap;
+  padding: .5rem 1rem; border-radius: 999px;
+  color: var(--fg); text-decoration: none; font-size: .95rem;
+}
+.nav-pills a:hover { background: var(--surface-2); }
+.nav-pills a[aria-current="page"] { background: var(--chip); font-weight: 600; }
+
+/* =========================================================================
+   Footer
+   ========================================================================= */
+.site-footer { margin-top: 4rem; padding-block: 2rem; background: var(--surface); color: var(--muted); font-size: .9rem; }
+.site-footer .container { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; }
+.contact-links { display: flex; gap: 1.25rem; list-style: none; padding: 0; }
+.contact-links a { color: var(--fg); }
+
+/* =========================================================================
+   Shared components
+   ========================================================================= */
+.page-title { font-size: clamp(1.8rem, 5vw, 2.6rem); margin: 1.5rem .25rem 1.5rem; }
+
+.card { background: var(--surface); border-radius: var(--radius-md); padding: 1.25rem; }
+.card p { color: var(--muted); }
+
+/* Responsive card grid: as many ≥17rem columns as fit; 1 column on phones. No media query needed. */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(17rem, 100%), 1fr)); gap: 1rem; }
+
+.btn {
+  display: inline-block; padding: .65rem 1.25rem; border-radius: 999px;
+  background: var(--primary); color: var(--on-primary);
+  text-decoration: none; font-weight: 600; font-size: .95rem;
+}
+.btn.tonal { background: var(--chip); color: var(--fg); }
+.btn:hover { filter: brightness(1.08); }
+
+/* Respect users who've asked the OS for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

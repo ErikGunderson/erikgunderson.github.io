@@ -1,0 +1,17 @@
+{
+  "title": "Erik Gunderson",
+  "role": "Lead Mobile Software Engineer",
+  "description": "Erik Gunderson — Lead Mobile Software Engineer focused on Android and Kotlin.",
+  "url": "https://erikgunderson.github.io",
+  "nav": [
+    { "label": "About", "url": "/" },
+    { "label": "Experience", "url": "/experience/" },
+    { "label": "Projects", "url": "/projects/" },
+    { "label": "Hobbies", "url": "/hobbies/" }
+  ],
+  "contact": {
+    "email": "TODO@example.com",
+    "linkedin": "https://www.linkedin.com/in/TODO",
+    "github": "https://github.com/ErikGunderson"
+  }
+}

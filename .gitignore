@@ -1,0 +1,11 @@
+# Dependencies (recreated by `npm ci` from package-lock.json)
+node_modules/
+
+# Eleventy build output (built fresh by GitHub Actions on every push)
+_site/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

@@ -153,10 +153,10 @@ section > h2 { font-size: 1.4rem; margin: 0 .25rem 1rem; }
 
 .avatar {
   width: 96px; height: 96px; border-radius: 50%;
-  display: grid; place-items: center;
-  background: var(--primary); color: var(--on-primary);
-  font-size: 2rem; font-weight: 700;
+  object-fit: cover;                       /* fill the circle without stretching */
+  background: var(--surface-2);            /* placeholder color while loading */
 }
+@media (min-width: 600px) { .avatar { width: 128px; height: 128px; } }
 .hero h1 { font-size: clamp(1.9rem, 6vw, 2.8rem); }
 .hero-role { color: var(--primary); font-weight: 600; }
 .hero .lede { color: var(--muted); max-width: 40rem; margin: .5rem 0 1.25rem; }

@@ -1,5 +1,27 @@
 // Eleventy configuration. Eleventy reads templates from `src/` and writes plain HTML to `_site/`.
+import Image from "@11ty/eleventy-img";
+
 export default function (eleventyConfig) {
+  // {% image "src/images/x.jpg", "Alt text", "sizes", [widths], "class", eager %}
+  // At build time: resizes the source to each width, encodes AVIF + WebP + JPEG (and drops EXIF
+  // metadata), and returns a <picture> the browser picks the smallest suitable file from.
+  eleventyConfig.addAsyncShortcode("image", async (src, alt, sizes = "100vw", widths = [400, 800, 1200], cls = "", eager = false) => {
+    if (alt === undefined) throw new Error(`Missing alt text for ${src} (use "" for decorative images)`);
+    const metadata = await Image(src, {
+      widths,
+      formats: ["avif", "webp", "jpeg"],
+      outputDir: "_site/img/",
+      urlPath: "/img/",
+    });
+    return Image.generateHTML(metadata, {
+      alt,
+      sizes,
+      class: cls || undefined,
+      loading: eager ? "eager" : "lazy", // lazy: offscreen images aren't downloaded until scrolled near
+      decoding: "async",
+    });
+  });
+
   // Files that aren't templates (CSS, JS, images, the resume PDF) are copied to _site as-is.
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");

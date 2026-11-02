@@ -2,8 +2,8 @@
 layout: layouts/base.njk
 ---
 <section class="hero" aria-labelledby="hero-title">
-  {# TODO: swap initials for a headshot (src/assets/) if you want one. #}
-  <div class="avatar" aria-hidden="true">EG</div>
+  {# Shown at 96px (128px on wider screens); 3 widths cover 1x/2x/3x screens. Eager: it's above the fold. #}
+  {% image "src/images/headshot.jpg", "Photo of Erik Gunderson", "(min-width: 600px) 128px, 96px", [96, 192, 384], "avatar", true %}
   <div>
     <h1 id="hero-title">{{ site.title }}</h1>
     <p class="hero-role">{{ site.role }} · Android &amp; Kotlin</p>

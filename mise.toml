@@ -1,0 +1,28 @@
+# mise: pins tool versions and defines project tasks. Used locally and in GitHub Actions.
+# List tasks: `mise tasks`   Run one: `mise run <task>` (or `mise <task>`)
+min_version = "2026.10.0"
+
+[tools]
+# Same Node major everywhere (your machine + CI). mise downloads it on first `mise install`.
+node = "26"
+
+[tasks.install]
+description = "Install npm dependencies exactly as locked"
+run = "npm ci"
+# Skip if the lockfile hasn't changed since the last successful install.
+sources = ["package.json", "package-lock.json"]
+outputs = ["node_modules/.package-lock.json"]
+
+[tasks.dev]
+description = "Dev server with live reload at http://localhost:8080"
+depends = ["install"]
+run = "npx eleventy --serve"
+
+[tasks.build]
+description = "Build the site into _site/"
+depends = ["install", "clean"]
+run = "npx eleventy"
+
+[tasks.clean]
+description = "Delete the build output"
+run = "node -e \"require('fs').rmSync('_site', { recursive: true, force: true })\""

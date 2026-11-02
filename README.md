@@ -1,17 +1,20 @@
 # erikgunderson.github.io
 
 Personal site, built with [Eleventy](https://www.11ty.dev/) and deployed to GitHub Pages by GitHub Actions.
+Tool versions and tasks are managed by [mise](https://mise.jdx.dev/) (`mise.toml`).
 
 ## Develop
 ```sh
-npm install      # first time only
-npm start        # dev server with live reload at http://localhost:8080
-npm run build    # one-off build into _site/
+mise install     # first time: installs the pinned Node version
+mise run dev     # installs deps if needed, dev server at http://localhost:8080
+mise run build   # clean build into _site/ (what CI runs)
+mise tasks       # list all tasks (defined in mise.toml)
 ```
 
 ## Layout
 - `src/` — source: pages (`*.njk`), `_includes/` layouts, `_data/` site data, `css/`, `js/`, `assets/`
 - `_site/` — build output (git-ignored; built in CI)
+- `mise.toml` — pinned Node version + tasks (install, dev, build, clean)
 - `.github/workflows/deploy.yml` — builds and publishes on every push to `main`
 
 ## Updating content

@@ -27,6 +27,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/favicon.svg");
+  eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
 
   // Rebuild + reload the dev server when CSS/JS change.
   eleventyConfig.addWatchTarget("src/css/");

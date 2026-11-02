@@ -1,7 +1,7 @@
 ---
 title: erikgunderson.github.io
 order: 2
-tech: [Eleventy, HTML, CSS, GitHub Actions]
+tech: [Eleventy, HTML, CSS, GitHub Actions, mise]
 links:
   - label: Source on GitHub
     url: https://github.com/ErikGunderson/erikgunderson.github.io

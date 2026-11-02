@@ -99,6 +99,11 @@ h1, h2, h3 { line-height: 1.2; font-weight: 500; }
   color: var(--fg); text-decoration: none; font-size: .95rem;
 }
 .nav-pills a:hover { background: var(--surface-2); }
+/* Small phones (~360px): tighten pills so all four fit without hidden horizontal scroll. */
+@media (max-width: 400px) {
+  .nav-pills { gap: .125rem; }
+  .nav-pills a { padding-inline: .7rem; font-size: .9rem; }
+}
 .nav-pills a[aria-current="page"] { background: var(--chip); font-weight: 600; }
 
 /* =========================================================================

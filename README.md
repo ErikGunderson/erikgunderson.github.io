@@ -21,3 +21,5 @@ npm run build    # one-off build into _site/
 - **Experience page**: `src/_data/experience.json` is a separate copy of the resume content.
   When you change the resume, update this file too.
 - **Skills**: `src/_data/skills.json`.
+- **Projects**: add a Markdown file to `src/content/projects/` (copy an existing one). Front matter
+  holds `title`, `order`, `tech`, and `links`; the body is the description.

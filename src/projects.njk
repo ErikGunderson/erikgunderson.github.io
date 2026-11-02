@@ -1,6 +1,26 @@
 ---
 layout: layouts/base.njk
 title: Projects
+description: Side projects by Erik Gunderson.
 ---
+{# collections.projects = every file tagged "projects" (see src/content/projects/). Sorted by `order`. #}
 <h1 class="page-title">Projects</h1>
-<p>Coming soon.</p>
+
+<div class="grid">
+  {%- for project in collections.projects | sort(false, false, "data.order") %}
+  <article class="card project">
+    <h2>{{ project.data.title }}</h2>
+    <div class="project-body">{{ project.content | safe }}</div>
+    {% if project.data.tech %}
+    <ul class="chips" aria-label="Technologies">
+      {%- for t in project.data.tech %}<li>{{ t }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    <p class="project-links">
+      {%- for link in project.data.links %}
+      <a href="{{ link.url }}">{{ link.label }}</a>
+      {%- endfor %}
+    </p>
+  </article>
+  {%- endfor %}
+</div>

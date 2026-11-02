@@ -178,6 +178,16 @@ section > h2 { font-size: 1.4rem; margin: 0 .25rem 1rem; }
 .highlights li + li { margin-top: .4rem; }
 .highlights li::marker { color: var(--primary); }
 
+/* =========================================================================
+   Projects
+   ========================================================================= */
+/* Flex column so the links row sits at the bottom of every card, even when descriptions differ in length. */
+.project { display: flex; flex-direction: column; gap: .5rem; }
+.project h2 { font-size: 1.25rem; }
+.project-body { color: var(--muted); }
+.project .chips { margin-top: auto; padding-top: .5rem; }
+.project-links { display: flex; flex-wrap: wrap; gap: 1rem; font-weight: 600; }
+
 /* Respect users who've asked the OS for less motion. */
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }

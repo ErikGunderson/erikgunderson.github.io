@@ -1,0 +1,5 @@
+{
+  "//": "Directory data: applies to every file in this folder. Tag them into collections.projects and don't give each one its own page.",
+  "tags": "projects",
+  "permalink": false
+}

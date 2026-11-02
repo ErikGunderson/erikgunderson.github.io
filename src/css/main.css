@@ -201,7 +201,8 @@ section > h2 { font-size: 1.4rem; margin: 0 .25rem 1rem; }
 }
 .gallery figure { margin: 0; }
 .gallery img {
-  width: 100%; aspect-ratio: 4 / 3; object-fit: cover; /* uniform tiles even if photos differ in shape */
+  width: 100%; aspect-ratio: 1; object-fit: cover; /* uniform square tiles whatever the photo shape */
+  object-position: var(--pos, center);          /* per-photo focal point, set from front matter */
   border-radius: var(--radius-sm); background: var(--surface-2);
 }
 .gallery figcaption { font-size: .85rem; color: var(--muted); margin-top: .35rem; }

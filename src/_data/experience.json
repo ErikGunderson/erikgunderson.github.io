@@ -1,0 +1,64 @@
+{
+  "jobs": [
+    {
+      "company": "Gravie",
+      "title": "Lead Mobile Software Engineer",
+      "start": "2022-04", "end": "2026-10",
+      "summary": "Founding mobile engineer. Owned the Android app's architecture, releases, and code quality.",
+      "highlights": [
+        "Built and launched the native Android app from scratch with Kotlin, Jetpack Compose, Jetpack ViewModel, and Jetpack Navigation, then kept it current through refactors as Compose matured",
+        "Implemented HIPAA requirements in the app: session timeouts, PHI-safe logging, and MFA for member logins through Descope. No PHI is persisted on the device, and the only stored data is encrypted and limited to member login",
+        "Integrated Paytient and Very Good Security to manage and protect Gravie Pay card information",
+        "Added member ID cards to Google Wallet, following Google's processes for handling PHI in the Wallet ecosystem",
+        "Designed and implemented a Kotlin microservice connecting core Gravie systems to Salesforce, streamlining how members get in contact with Gravie Care",
+        "Moved hardcoded UI logic into Clojure/Groovy backends alongside backend engineers, so static content changes no longer required a new app release",
+        "Set up CI/CD pipelines to the Play Store with automated unit and functional testing, Detekt and ktlint checks, and Slack alerts for nightly test results",
+        "Ran sprint planning and Scrum ceremonies, mentored junior engineers, and set code review and quality guidelines"
+      ]
+    },
+    {
+      "company": "Spok",
+      "title": "Senior Software Engineer",
+      "start": "2018-07", "end": "2022-04",
+      "summary": "Clinical communication and collaboration software for Android with strict performance and privacy requirements.",
+      "highlights": [
+        "Tech/Team Lead for in-person, remote, and offshore developers",
+        "Architected and built client-side authentication on the Android Keystore, plus authenticated RESTful API access",
+        "Integrated AWS IoT to deliver real-time text messages and clinical alerts to patient care teams",
+        "Architected and rolled out MVVM with Jetpack components and a common DataBinding RecyclerView Adapter",
+        "Implemented feature flagging to support a Continuous Delivery model",
+        "Implemented a Room (SQLite) cache for downloaded data",
+        "Automated pull request verification and release builds with GitHub Actions, and managed Play Store submission and release"
+      ]
+    },
+    {
+      "company": "Medtronic",
+      "title": "Software Engineer",
+      "start": "2017-06", "end": "2018-07",
+      "highlights": [
+        "Developed Android clinician programmer software for Medtronic Neuromodulation devices, which manage chronic pain through spinal column stimulation",
+        "Worked on the released Intellis and Restore product lines and participated in formal verification testing for FDA submissions"
+      ]
+    }
+  ],
+  "earlier": [
+    {
+      "company": "University of Wisconsin–Stout",
+      "title": "Android Research Assistant",
+      "start": "2015-10", "end": "2017-05",
+      "summary": "Built Android systems using Google Maps and custom BLE inhaler caps to collect location data for a study of asthma attack triggers."
+    },
+    {
+      "company": "Marshfield Clinic Information Services",
+      "title": "Programmer/Analyst Intern",
+      "start": "2016-06", "end": "2016-08"
+    }
+  ],
+  "education": {
+    "school": "University of Wisconsin–Stout",
+    "location": "Menomonie, Wisconsin",
+    "graduated": "2017-05",
+    "degree": "Bachelor of Science in Game Design and Development, Computer Science",
+    "minor": "Mathematics"
+  }
+}

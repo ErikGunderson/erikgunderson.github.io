@@ -162,6 +162,22 @@ section > h2 { font-size: 1.4rem; margin: 0 .25rem 1rem; }
 .hero .lede { color: var(--muted); max-width: 40rem; margin: .5rem 0 1.25rem; }
 .actions { display: flex; flex-wrap: wrap; gap: .5rem; }
 
+/* =========================================================================
+   Experience
+   ========================================================================= */
+.page-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
+.page-head .page-title { margin-bottom: 0; }
+
+/* Ordered list for semantics (jobs have an order), with the bullets/numbers removed visually. */
+.timeline { list-style: none; padding: 0; display: grid; gap: 1rem; }
+.job h2 { font-size: 1.4rem; }
+.job-dates { font-size: .85rem; font-weight: 600; color: var(--primary); }
+.job-title { color: var(--fg) !important; font-weight: 500; margin-bottom: .5rem; }
+.card h3 + .job-title { margin-bottom: .25rem; }
+.highlights { padding-left: 1.2rem; margin-top: .75rem; color: var(--muted); }
+.highlights li + li { margin-top: .4rem; }
+.highlights li::marker { color: var(--primary); }
+
 /* Respect users who've asked the OS for less motion. */
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }

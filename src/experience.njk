@@ -1,6 +1,58 @@
 ---
 layout: layouts/base.njk
 title: Experience
+description: Erik Gunderson's experience as an Android engineer at Gravie, Spok, and Medtronic.
 ---
-<h1 class="page-title">Experience</h1>
-<p>Coming soon.</p>
+{# One macro renders a date range; <time datetime> gives machines the exact value. #}
+{% macro dates(job) -%}
+  <time datetime="{{ job.start }}">{{ job.start | monthYear }}</time> – <time datetime="{{ job.end }}">{{ job.end | monthYear }}</time>
+{%- endmacro %}
+
+<div class="page-head">
+  <h1 class="page-title">Experience</h1>
+  <a class="btn" href="{{ site.resumeUrl }}">Download resume (PDF)</a>
+</div>
+
+<ol class="timeline">
+  {%- for job in experience.jobs %}
+  <li>
+    <article class="card job">
+      <header>
+        <p class="job-dates">{{ dates(job) }}</p>
+        <h2>{{ job.company }}</h2>
+        <p class="job-title">{{ job.title }}</p>
+      </header>
+      {% if job.summary %}<p>{{ job.summary }}</p>{% endif %}
+      <ul class="highlights">
+        {%- for h in job.highlights %}
+        <li>{{ h }}</li>
+        {%- endfor %}
+      </ul>
+    </article>
+  </li>
+  {%- endfor %}
+</ol>
+
+<section aria-labelledby="earlier-title">
+  <h2 id="earlier-title">Earlier</h2>
+  <div class="grid">
+    {%- for job in experience.earlier %}
+    <article class="card">
+      <p class="job-dates">{{ dates(job) }}</p>
+      <h3>{{ job.title }}</h3>
+      <p class="job-title">{{ job.company }}</p>
+      {% if job.summary %}<p>{{ job.summary }}</p>{% endif %}
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+{% set edu = experience.education %}
+<section aria-labelledby="edu-title">
+  <h2 id="edu-title">Education</h2>
+  <article class="card">
+    <p class="job-dates"><time datetime="{{ edu.graduated }}">{{ edu.graduated | monthYear }}</time></p>
+    <h3>{{ edu.school }}</h3>
+    <p>{{ edu.degree }}. Minor in {{ edu.minor }}.</p>
+  </article>
+</section>

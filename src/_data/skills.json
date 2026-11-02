@@ -1,6 +1,8 @@
 [
-  { "group": "Android", "items": ["Kotlin", "Jetpack Compose", "Coroutines", "Retrofit"] },
+  { "group": "Android", "items": ["Kotlin", "Android SDK", "Jetpack Compose", "Jetpack ViewModel", "Jetpack Navigation", "Coroutines", "Retrofit", "Room", "Android Keystore"] },
   { "group": "iOS (working knowledge)", "items": ["Swift", "SwiftUI"] },
-  { "group": "CI/CD & tooling", "items": ["GitHub Actions", "GitLab Pipelines", "Google Play Console", "Detekt", "ktlint"] },
-  { "group": "Compliance", "items": ["HIPAA"] }
+  { "group": "CI/CD & quality", "items": ["GitHub Actions", "GitLab Pipelines", "Google Play Console", "Detekt", "ktlint", "Danger", "Unit / Compose / functional testing"] },
+  { "group": "Backend & integrations", "items": ["Kotlin/Java/Groovy services", "Salesforce integration", "REST APIs", "AWS IoT"] },
+  { "group": "Compliance", "items": ["HIPAA"] },
+  { "group": "AI tools", "items": ["Claude Code", "Gemini"] }
 ]

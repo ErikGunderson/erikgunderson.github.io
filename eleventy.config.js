@@ -9,6 +9,14 @@ export default function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/css/");
   eleventyConfig.addWatchTarget("src/js/");
 
+  // Filters are functions templates can pipe values through: {{ "2022-04" | monthYear }} → "Apr 2022".
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  eleventyConfig.addFilter("monthYear", (ym) => {
+    if (!ym) return "Present";
+    const [year, month] = ym.split("-");
+    return `${MONTHS[Number(month) - 1]} ${year}`;
+  });
+
   // Footer copyright year.
   eleventyConfig.addGlobalData("year", () => new Date().getFullYear());
 }

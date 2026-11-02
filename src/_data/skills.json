@@ -1,0 +1,6 @@
+[
+  { "group": "Android", "items": ["Kotlin", "Jetpack Compose", "Coroutines", "Retrofit"] },
+  { "group": "iOS (working knowledge)", "items": ["Swift", "SwiftUI"] },
+  { "group": "CI/CD & tooling", "items": ["GitHub Actions", "GitLab Pipelines", "Google Play Console", "Detekt", "ktlint"] },
+  { "group": "Compliance", "items": ["HIPAA"] }
+]

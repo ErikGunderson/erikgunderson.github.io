@@ -1,5 +1,39 @@
 ---
 layout: layouts/base.njk
 ---
-<h1 class="page-title">{{ site.title }}</h1>
-<p>{{ site.role }}. Coming soon.</p>
+<section class="hero" aria-labelledby="hero-title">
+  {# TODO: swap initials for a headshot (src/assets/) if you want one. #}
+  <div class="avatar" aria-hidden="true">EG</div>
+  <div>
+    <h1 id="hero-title">{{ site.title }}</h1>
+    <p class="hero-role">{{ site.role }} · Android &amp; Kotlin</p>
+    <p class="lede">I build Android apps for regulated healthcare. Most recently I was the founding mobile engineer at Gravie, where I built the Android app from scratch.</p>
+    <div class="actions">
+      <a class="btn" href="{{ site.resumeUrl }}">Download resume (PDF)</a>
+      <a class="btn tonal" href="{{ site.contact.linkedin }}" rel="me">LinkedIn</a>
+      <a class="btn tonal" href="{{ site.contact.github }}" rel="me">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section class="prose" aria-labelledby="about-title">
+  <h2 id="about-title">About</h2>
+  <p>I'm an Android engineer with nine years of professional experience, all in regulated healthcare: clinician software for Medtronic neuromodulation devices, clinical communication apps at Spok, and most recently Gravie, where I was a founding mobile engineer.</p>
+  <p>At Gravie I built the Android app from scratch in Kotlin and Jetpack Compose, and owned its architecture, releases, and code quality for four and a half years. That meant HIPAA work like session timeouts, PHI-safe logging, and MFA, plus member ID cards in Google Wallet and secure handling of payment card data.</p>
+  <p>Before that I spent almost four years at Spok as a tech lead for in-person, remote, and offshore developers, working on features like Keystore-backed authentication and real-time clinical alerts.</p>
+  <p>I'll work outside the app when the job calls for it, like building a Kotlin microservice to integrate with Salesforce, or moving UI logic to the backend so content changes ship without an app release. I also have working knowledge of iOS (Swift, SwiftUI) and contribute to existing iOS apps.</p>
+</section>
+
+<section aria-labelledby="skills-title">
+  <h2 id="skills-title">Skills</h2>
+  <div class="grid">
+    {%- for skill in skills %}
+    <div class="card">
+      <h3>{{ skill.group }}</h3>
+      <ul class="chips">
+        {%- for item in skill.items %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
